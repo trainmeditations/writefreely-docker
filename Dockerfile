@@ -10,7 +10,6 @@ WORKDIR /opt/writefreely
 COPY --from=extractor /writefreely /opt/writefreely
 EXPOSE 8080
 
-WORKDIR /opt/writefreely/data
-RUN chown daemon:daemon . ../keys
+RUN mkdir data && chown daemon:daemon data keys
 USER daemon
-CMD [ "/opt/writefreely/writefreely" ]
+CMD [ "/opt/writefreely/writefreely -c /opt/writefreely/data/config.ini" ]
