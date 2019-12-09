@@ -12,4 +12,4 @@ EXPOSE 8080
 
 RUN mkdir data && chown daemon:daemon data keys
 USER daemon
-CMD [ "/opt/writefreely/writefreely -c /opt/writefreely/data/config.ini" ]
+CMD [ "/opt/writefreely/writefreely", "-c", "/opt/writefreely/data/config.ini" ]
