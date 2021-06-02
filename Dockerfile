@@ -1,6 +1,6 @@
 #Download and extract official build
 FROM alpine AS extractor
-ARG version=0.12.0
+ARG version=0.13.0rc1
 ADD https://github.com/writeas/writefreely/releases/download/v${version}/writefreely_${version}_linux_amd64.tar.gz /
 RUN /bin/tar -xzf /writefreely_${version}_linux_amd64.tar.gz
 
